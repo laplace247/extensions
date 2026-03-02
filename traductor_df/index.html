@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="stylesheet" href="style.css">
+    <title>Extensión del traductor de Chrome</title>
+</head>
+
+<body>
+    <div class="header">
+        <button id="historyBtn" class="history-btn" title="Ver historial">
+            <i class="fi fi-br-time-past"></i>
+        </button>
+        <h1 class="title">Traductor D'Flores</h1>
+        <button id="themeToggle" class="theme-toggle" title="Cambiar tema">
+            <i class="fi fi-br-sun theme-icon"></i>
+        </button>
+    </div>
+
+    <div class="input-section">
+        <label for="inputText">Tu texto:</label>
+        <div class="textarea-container">
+            <textarea id="inputText" rows="6" placeholder="Escriba texto aquí..."></textarea>
+            <div class="char-counter"><span id="charCount">0</span>/500</div>
+        </div>
+    </div>
+
+    <div class="language-selector">
+        <div class="select-group">
+            <label for="translateFrom">De:</label>
+            <select id="translateFrom">
+                <option value="en">Inglés</option>
+            </select>
+        </div>
+        <button id="swapLangs" class="swap-btn" title="Intercambiar idiomas">
+            <i class="fi fi-br-refresh"></i>
+        </button>
+        <div class="select-group">
+            <label for="translateTo">A:</label>
+            <select id="translateTo">
+                <option value="es">Español</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button id="translateBtn" class="primary-btn">
+            <i class="fi fi-br-language"></i>
+            Traducir
+        </button>
+        <button id="clearBtn" class="secondary-btn">
+            <i class="fi fi-br-trash"></i>
+            Limpiar
+        </button>
+    </div>
+
+    <div class="output-section">
+        <div class="output-header">
+            <label>Traducción:</label>
+            <select id="voiceSelect" class="voice-select" disabled>
+                <option value="">Voz por defecto</option>
+            </select>
+            <button id="speakBtn" class="speak-btn" disabled>
+                <i class="fi fi-br-volume"></i>
+            </button>
+            <button id="copyBtn" class="copy-btn" disabled>
+                <i class="fi fi-br-copy"></i>
+            </button>
+        </div>
+        <div id="outputText" class="output-text"></div>
+    </div>
+
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <span>Traduciendo...</span>
+    </div>
+
+    <script src="paises.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

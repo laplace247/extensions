@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor JFIF a PNG</title>
+    <link rel="stylesheet" href="popup.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+</head>
+<body>
+    <div class="converter">
+        <button id="themeToggle" class="theme-toggle">
+            <i class="fi fi-br-sun"></i>
+        </button>
+        <h1>Convertidor a PNG</h1>
+        <p>Selecciona archivos JFIF/WEBP para convertir a PNG</p>
+        
+        <label for="fileInput" class="file-label">Seleccionar Archivos</label>
+        <input type="file" id="fileInput" accept=".jfif,.webp,image/jpeg,image/pjpeg,image/pjp,image/webp" multiple>
+        
+        <button id="convertBtn" disabled>Convertir y Descargar</button>
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div id="status"></div>
+    </div>
+
+    <script src="jszip.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

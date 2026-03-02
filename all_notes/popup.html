@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="popup.css">
+    <title>ToDo App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="task-input">
+            <img src="bars-icon.svg">
+            <input type="text" placeholder="Agregar una nueva tarea">
+        </div>
+
+        <div class="controls">
+            <div class="filters">
+                <span id="all" class="active">
+                    Todas
+                </span>
+                <span id="pending">Pendientes</span>
+                <span id="completed">Completadas</span>
+            </div>
+            <button class="clear-btn"><i class="fas fa-broom"></i></button>
+        </div>
+        <ul class="task-box"></ul>
+        
+        <!-- Modal de confirmación -->
+        <div class="modal-overlay" id="confirmModal">
+            <div class="modal">
+                <p>¿Estás seguro de que quieres eliminar todas las tareas?</p>
+                <div class="modal-buttons">
+                    <button class="btn-cancel">Cancelar</button>
+                    <button class="btn-confirm">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

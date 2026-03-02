@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Acortador de URL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo">ShortURL</div>
+    <p>Acorta URLs largas de forma gratuita</p>
+    <input type="text" id="custom-url" placeholder="Pega tu URL aquí">
+    <button id="shorten-custom-btn">✂️ Acortar URL</button>
+    <div class="url-container">
+        <input type="text" id="short-url" readonly placeholder="Tu URL acortada aparecerá aquí">
+        <button id="copy-btn" title="Copiar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+        </button>
+    </div>
+    <div id="status"></div>
+    <div class="footer">Haz clic en la URL para copiar</div>
+    <script src="popup.js"></script>
+</body>
+</html>

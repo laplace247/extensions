@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Compresor de PNG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Compresor Rápido de PNG</h1>
+        </header>
+        <p class="description">Selecciona una o más imágenes PNG para comprimirlas.</p>
+        
+        <label for="fileInput" class="file-label">
+            📂 Seleccionar Archivos
+        </label>
+        <input type="file" id="fileInput" accept="image/png" multiple>
+
+        <div class="quality-control">
+            <label for="colorsSlider">Número de Colores: <span id="colorsValue">256</span></label>
+            <input type="range" id="colorsSlider" min="2" max="256" value="256" step="1">
+        </div>
+        
+        <button id="compressBtn" disabled>Comprimir y Descargar</button>
+        <div id="status"></div>
+    </div>
+
+    <!-- ¡CORREGIDO! Cargar las librerías desde la carpeta local 'lib' -->
+    <script src="lib/jszip.min.js"></script>
+    <script src="lib/squoosh_png.js"></script>
+    
+    <!-- Nuestro script -->
+    <script src="script.js"></script>
+</body>
+</html>

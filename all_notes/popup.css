@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 350px;
+    height: 500px;
+    background: #0f172a;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+::selection{
+    color: #fff;
+    background: #1e293b;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.task-input{
+    height: 45px;
+    padding: 0 0 18px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.task-input img{
+    top: 22px;
+    left: 12px;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+}
+
+.task-input input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 0 15px 0 40px;
+    border: 1px solid #475569;
+    background: #334155;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.task-input input:focus, .task-input input.active{
+    border: 2px solid #64748b;
+    background: #3f4a5a;
+    box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.1);
+}
+
+.task-input input::placeholder{
+    color: #94a3b8;
+}
+
+.controls, li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controls{
+    padding: 15px 0;
+    border-bottom: 1px solid #475569;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    align-items: center;
+}
+
+.filters{
+    display: contents;
+}
+
+.filters span{
+    font-size: 13px;
+    color: #cbd5e1;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 8px 6px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.filters span:hover{
+    background: #334155;
+}
+
+.filters span.active{
+    color: #fff;
+    background: #475569;
+    font-weight: 500;
+}
+
+.controls .clear-btn{
+    border: none;
+    opacity: 0.6;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 6px;
+    background: #1e293b;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+}
+
+.clear-btn.active{
+    opacity: 0.9;
+    pointer-events: auto;
+}
+
+.clear-btn.active:hover{
+    background: #475569;
+}
+
+.clear-btn:active{
+    transform: scale(0.93);
+}
+
+.task-box{
+    margin-top: 15px;
+    padding: 0 10px 10px 0;
+    max-height: 280px;
+    overflow-y: auto;
+    background: #1e293b;
+}
+
+.task-box::-webkit-scrollbar{
+    width: 4px;
+}
+
+.task-box::-webkit-scrollbar-track{
+    background: #334155;
+    border-radius: 25px;
+}
+
+.task-box::-webkit-scrollbar-thumb{
+    background: #475569;
+    border-radius: 25px;
+}
+
+.task-box .task{
+    list-style: none;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    align-items: flex-start;
+    border-bottom: 1px solid #475569;
+}
+
+.task-box .task:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.task-box .task label{
+    display: flex;
+    align-items: flex-start;
+}
+
+.task-box label input{
+    margin-top: 5px;
+    accent-color: #475569;
+}
+
+.task-box label p{
+    user-select: none;
+    margin-left: 10px;
+    word-wrap: break-word;
+    color: #e2e8f0;
+    font-size: 14px;
+}
+
+.task label p.checked{
+    text-decoration: line-through;
+}
+
+.task-box .settings{
+    position: relative;
+}
+
+.settings :where(i, li){
+    cursor: pointer;
+}
+
+.settings i{
+    color: #cbd5e1;
+}
+
+.settings .task-menu{
+    z-index: 10;
+    right: -5px;
+    bottom: -65px;
+    padding: 5px 0;
+    background: #334155;
+    position: absolute;
+    border-radius: 4px;
+    transform: scale(0);
+    transform-origin: top right;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.task-box .task:last-child .task-menu{
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+.task-box .task:first-child .task-menu{
+    bottom: -65px;
+    transform-origin: top right;
+}
+
+.task-menu.show{
+    transform: scale(1);
+}
+
+.task-menu li{
+    height: 25px;
+    font-size: 14px;
+    margin-bottom: 2px;
+    padding: 15px 12px;
+    cursor: pointer;
+    justify-content: flex-start;
+    color: #cbd5e1;
+}
+
+.task-menu li:last-child{
+    margin-bottom: 0;
+}
+
+.settings li:hover{
+    background: #475569;
+}
+
+.settings li i{
+    padding-right: 6px;
+}
+
+.task-box span{
+    color: #cbd5e1;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Modal de confirmación */
+.modal-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal{
+    background: #334155;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal p{
+    color: #e2e8f0;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.modal-buttons{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-cancel, .btn-confirm{
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel{
+    background: #475569;
+    color: #e2e8f0;
+}
+
+.btn-cancel:hover{
+    background: #64748b;
+}
+
+.btn-confirm{
+    background: #dc2626;
+    color: #fff;
+}
+
+.btn-confirm:hover{
+    background: #b91c1c;
+}

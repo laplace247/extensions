@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <title>Generador QR</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Generador QR</h2>
+        <div class="controls">
+            <input type="color" class="light" value="#ffffff" title="Color de fondo">
+            <input type="color" class="dark" value="#000000" title="Color del código">
+            <select class="sizes">
+                <option value="200">200×200</option>
+                <option selected value="300">300×300</option>
+                <option value="400">400×400</option>
+            </select>
+        </div>
+        <input type="text" class="qr-text" placeholder="Ingresa texto o URL">
+        <div id="qr-code"></div>
+        <div class="action-container">
+            <button class="btn download-btn">Descargar PNG</button>
+            <button class="btn share-btn">
+                <span>Compartir</span>
+                <img src="share.svg" alt="">
+            </button>
+        </div>
+    </div>
+    <script src="qrcode.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
